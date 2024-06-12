@@ -46,4 +46,9 @@ public class Cabaña extends Alojamiento {
        return (noDias>5)? Cabaña.DESCUENTO_POR_DIAS: 0;
     }
     
+    @Override
+    public String dataToFile(){
+        return super.dataToFile() + ";cab;"+this.noCuartos;
+    }
+    
 }

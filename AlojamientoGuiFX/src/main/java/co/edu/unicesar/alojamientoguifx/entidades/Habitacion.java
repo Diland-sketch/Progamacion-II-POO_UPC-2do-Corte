@@ -53,5 +53,9 @@ public class Habitacion extends Alojamiento {
         return "Habitacion{" + super.toString()+ ", noMaxPersona=" + noMaxPersona + '}';
     }
 
+    @Override
+    public String dataToFile(){
+        return super.dataToFile() + ";hab;"+this.noMaxPersona;
+    }
     
 }

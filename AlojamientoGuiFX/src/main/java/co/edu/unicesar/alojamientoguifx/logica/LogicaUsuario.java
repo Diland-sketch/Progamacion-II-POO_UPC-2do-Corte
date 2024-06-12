@@ -6,19 +6,19 @@ package co.edu.unicesar.alojamientoguifx.logica;
 
 /**
  *
- * @author ESTUDIANTES
+ * @author Jairo F
  */
 public class LogicaUsuario {
-
-    private final String USER = "Diland";
-    private final String PASSWORD = "12345";
     
+    private final String USER = "Seuz";
+    private final String PASSWORD = "12345";
+
     public LogicaUsuario() {
     }
     
     public boolean login(String username, String password){
-        //implementar logica para validacion de crendenciales de usuario
-        return (username.equals(USER) && password.equals(PASSWORD));
+        // implementar logica para validacion de credenciales de ususario
+        return (username.equals(USER)&&password.equals(PASSWORD));
     }
     
 }

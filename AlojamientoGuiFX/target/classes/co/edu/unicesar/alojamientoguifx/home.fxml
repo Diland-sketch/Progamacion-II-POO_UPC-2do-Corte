@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="831.0" prefWidth="1295.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.unicesar.alojamientoguifx.HomeController">
+<HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="831.0" prefWidth="1295.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.unicesar.alojamientoguifx.HomeController">
    <children>
       <VBox prefHeight="831.0" prefWidth="412.0" HBox.hgrow="NEVER">
          <children>
@@ -28,7 +28,7 @@
             </StackPane>
             <VBox prefHeight="200.0" prefWidth="100.0" VBox.vgrow="ALWAYS">
                <children>
-                  <Button alignment="CENTER" mnemonicParsing="false" onAction="#clickBtnRegistro" prefHeight="73.0" prefWidth="438.0" text="Registro de alojamiento">
+                  <Button alignment="CENTER" mnemonicParsing="false" onAction="#clcikBtnRegistro" prefHeight="73.0" prefWidth="438.0" text="Registro de alojamiento">
                      <font>
                         <Font size="21.0" />
                      </font>
@@ -67,7 +67,7 @@
       </VBox>
       <StackPane fx:id="panelTrabajo" alignment="TOP_CENTER" prefHeight="150.0" prefWidth="200.0" style="-fx-background-color: #556677;" HBox.hgrow="ALWAYS">
          <children>
-            <StackPane prefHeight="831.0" prefWidth="953.0" />
+            <StackPane fx:id="panelTrabajo" prefHeight="831.0" prefWidth="953.0" />
          </children>
       </StackPane>
    </children>

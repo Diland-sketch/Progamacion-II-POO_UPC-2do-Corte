@@ -5,14 +5,13 @@
 package co.edu.unicesar.alojamientoguifx;
 
 
+import co.edu.unicesar.alojamientoguifx.entidades.Alojamiento;
+import co.edu.unicesar.alojamientoguifx.logica.Logica;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.Node;
 import javafx.scene.layout.StackPane;
 
 
@@ -23,8 +22,10 @@ import javafx.scene.layout.StackPane;
  */
 public class HomeController implements Initializable {
     
+    private Logica logica = new Logica();
     @FXML private StackPane panelTrabajo;
     private StackPane panelRegistro, panelConsulta;
+    
     
     /**
      * Initializes the controller class.
@@ -34,25 +35,32 @@ public class HomeController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
-        try {
+        try{
             this.panelRegistro = (StackPane) App.loadComponent("registro");
             this.panelRegistro.setVisible(false);
             this.panelTrabajo.getChildren().clear();
             this.panelTrabajo.getChildren().add(panelRegistro);
-        } catch (IOException ex) {
-            Logger.getLogger(HomeController.class.getName()).log(Level.SEVERE, null, ex);
         }
-    }
-
+        catch(IOException ioe){
+        }
+        
+        
+        
+    }    
+    
     @FXML
-    private void clickBtnRegistro(){
-        this.panelRegistro.setVisible(true);
+    private void clcikBtnRegistro(){
+          this.panelRegistro.setVisible(true);
     }
     
     @FXML
     private void clickBtnConsulta(){
         this.panelRegistro.setVisible(false);
+        // mostra el panel de consulta
+        
+        for(Alojamiento a: this.logica.getAlojamientos()){
+            System.out.println(a);
+        }
         
     }
-    
 }

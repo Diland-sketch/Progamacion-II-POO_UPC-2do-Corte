@@ -21,12 +21,13 @@ public class App extends Application {
     public void start(Stage stage) throws IOException {
         scene = new Scene(loadFXML("login"));
         stage.setScene(scene);
-        stage.setMaximized(true);
-        stage.setTitle("Login");
+        stage.sizeToScene();
+        stage.setTitle("Login..");
         stage.show();
     }
     
-    public static void setStage(String fxml) throws IOException{
+    // Reemplaza una stage por otra
+    public static void setStage(String fxml)throws IOException{
         Window ventana = scene.getWindow();
         Stage stage = (Stage)ventana;
         
@@ -38,21 +39,23 @@ public class App extends Application {
         nuevaStage.show();
     }
     
-    public static void setNewScene(String fmxl)throws IOException{
+    // Crea una nueva scenea y la establece como escene de la Stage principal
+    public static void setNewScene(String fxml) throws IOException{
         Window ventana = scene.getWindow();
         Stage stage = (Stage)ventana;
-        setRoot(fmxl);
+        setRoot(fxml);
         stage.setMaximized(true);
     }
     
-    public static Node loadComponent(String fxml)throws IOException{
-        return (Node)loadFXML(fxml);
+    // Lee un componente a partir de un archivo FXML y lo retorna como nodo
+    public static Node loadComponent(String fxml) throws IOException {
+        return (Node) loadFXML(fxml);
     }
 
     static void setRoot(String fxml) throws IOException {
         scene.setRoot(loadFXML(fxml));
     }
-
+    
     private static Parent loadFXML(String fxml) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource(fxml + ".fxml"));
         return fxmlLoader.load();

@@ -4,11 +4,13 @@
  */
 package co.edu.unicesar.alojamientoguifx.entidades;
 
+import java.io.Serializable;
+
 /**
  *
  * @author Jairo F
  */
-public abstract class Alojamiento {
+public abstract class Alojamiento implements Serializable {
     private int codigo;
     private String direccion;
     private String ciudad;
@@ -59,6 +61,10 @@ public abstract class Alojamiento {
     @Override
     public String toString() {
         return  "codigo=" + codigo + ", direccion=" + direccion + ", ciudad=" + ciudad + ", pais=" + pais;
+    }
+    
+    public String dataToFile(){
+         return this.codigo+";"+this.direccion+";"+this.ciudad+";"+this.pais;
     }
  
 public abstract double calcularPrecioDia();

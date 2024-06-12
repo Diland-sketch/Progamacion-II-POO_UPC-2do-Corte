@@ -12,9 +12,9 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<HBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="898.0" prefWidth="1464.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.unicesar.alojamientoguifx.LoginController">
+<HBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="613.0" prefWidth="602.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.unicesar.alojamientoguifx.LoginController">
    <children>
-      <VBox prefHeight="898.0" prefWidth="189.0" HBox.hgrow="ALWAYS" />
+      <VBox prefHeight="746.0" prefWidth="340.0" HBox.hgrow="ALWAYS" />
       <VBox alignment="CENTER" prefHeight="746.0" prefWidth="537.0" HBox.hgrow="NEVER">
          <children>
             <StackPane prefHeight="777.0" prefWidth="537.0">
@@ -76,6 +76,6 @@
             </StackPane>
          </children>
       </VBox>
-      <VBox prefHeight="608.0" prefWidth="0.0" HBox.hgrow="ALWAYS" />
+      <VBox prefHeight="746.0" prefWidth="340.0" HBox.hgrow="ALWAYS" />
    </children>
 </HBox>

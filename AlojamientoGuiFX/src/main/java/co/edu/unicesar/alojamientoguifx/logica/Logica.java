@@ -6,9 +6,11 @@ package co.edu.unicesar.alojamientoguifx.logica;
 
 
 import co.edu.unicesar.alojamientoguifx.entidades.*;
+import co.edu.unicesar.alojamientoguifx.excepciones.*;
 import co.edu.unicesar.alojamientoguifx.persistencia.*;
+import java.io.IOException;
 import java.time.LocalDate;
-
+import java.util.List;
 
 /**
  *
@@ -19,16 +21,17 @@ public class Logica {
     private ICrudRegistroAlojamiento persistencia;
 
     public Logica() {
-        this.persistencia = new RegistroAlojamientoImplArrayList();
+        //this.persistencia = new RegistroAlojamientoImplArrayList();
+        this.persistencia = new ArchivoObjeto();
     }
     
     public Alojamiento crearAlojamiento(int codigo, String dir, String ciudad, String pais, int valor, int tipo){
         
         switch (tipo) {
-            case 1:
+            case 2:
                 return new Habitacion(valor, codigo, dir, ciudad, pais);
                
-            case 2:
+            case 1:
                 return new Cabaña(valor, codigo, dir, ciudad, pais);
                
             default: return null;
@@ -43,7 +46,12 @@ public class Logica {
     }
     
     
-    public Cotizacion crearCotizacion(LocalDate inicio, LocalDate fin, Alojamiento alojamiento){
+    public Cotizacion crearCotizacion(LocalDate inicio, LocalDate fin, Alojamiento alojamiento)
+            throws ExcepcionFechaAlojamiento {
+    
+        if(inicio.isAfter(fin)){
+            throw new ExcepcionFechaAlojamiento("La fecha fin no puede ser menor que la fecha inicio");
+        }
         
         return new Cotizacion(inicio, fin, alojamiento);
         
@@ -54,6 +62,13 @@ public class Logica {
         return this.persistencia.buscar(codigo);
         
     }
+    
+    public List<Alojamiento> getAlojamientos(){
+        
+        return this.persistencia.obtenerAlojamientos();
+        
+    }
+    
     
     
 }

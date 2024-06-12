@@ -4,7 +4,9 @@
  */
 package co.edu.unicesar.alojamientoguifx.persistencia;
 
+
 import co.edu.unicesar.alojamientoguifx.entidades.Alojamiento;
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -12,7 +14,7 @@ import java.util.List;
  *
  * @author Jairo F
  */
-public interface ICrudRegistroAlojamiento {
+public interface ICrudRegistroAlojamiento extends Serializable{
     
      boolean agregarAlojamiento(Alojamiento a);
      Alojamiento buscar(int codigo);

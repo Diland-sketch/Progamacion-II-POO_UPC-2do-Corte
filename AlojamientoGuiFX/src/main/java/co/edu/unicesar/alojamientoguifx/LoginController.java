@@ -21,21 +21,20 @@ import javafx.scene.control.TextField;
  * @author Jairo F
  */
 public class LoginController implements Initializable {
-    
-    //Se asocia
-    
-    @FXML private TextField txtUsername; 
+
+    // Se asocia los componentes del controlador con la GUI
+    @FXML private TextField txtUsername;
     @FXML private PasswordField txtPassword;
     @FXML private Button btnLogin;
-    private LogicaUsuario logicaUsuario  = new LogicaUsuario();
+    private LogicaUsuario logicaUsuario=new LogicaUsuario();;
     
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO  
-    }   
+        
+    }  
     
     @FXML
     private void clickBtnLogin() throws IOException{
@@ -45,14 +44,18 @@ public class LoginController implements Initializable {
         if(this.logicaUsuario.login(username, password)){
             //App.setStage("home");
             App.setNewScene("home");
-        }else{
-            //Genera mensaje de notificacion
+        }
+        else{
+        // Genera mensaje de notificacion
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("Mensaje de Login");
             alert.setHeaderText("Informacion de credenciales registradas");
-            alert.setContentText("Las credencenciales no estan registradas, intente nuevamente");
-            alert.showAndWait();
+            alert.setContentText("Las credenciales registradas no son correctas, "
+                    + "intente nuevamente");
+            alert.show();
+        
         }
+        
         
     }
     

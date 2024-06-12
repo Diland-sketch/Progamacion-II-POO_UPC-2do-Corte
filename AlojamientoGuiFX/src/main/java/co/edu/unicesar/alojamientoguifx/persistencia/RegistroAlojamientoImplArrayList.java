@@ -4,6 +4,7 @@
  */
 package co.edu.unicesar.alojamientoguifx.persistencia;
 
+
 import co.edu.unicesar.alojamientoguifx.entidades.Alojamiento;
 import java.util.ArrayList;
 import java.util.HashMap;
